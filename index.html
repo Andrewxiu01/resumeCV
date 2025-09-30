@@ -1,51 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andrew | Frontend Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrewxiu | Resume</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Andrew</h1>
-    <p>Frontend Developer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-container container">
+      <!-- Hamburger (mobile only via CSS) -->
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+      <!-- Logo / Name -->
+      <h1 class="logo">Andrewxiu</h1>
+
+      <!-- Centered navigation -->
+      <nav id="site-nav" class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a recent graduate from Wawasan Open University with internship experience in web development...</p>
-  </section>
+  <!-- Main content -->
+  <main>
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <p>I’m a recent graduate from Wawasan Open University with internship experience in web development. I enjoy building simple, fast, and accessible UIs.</p>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>React (basic)</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React (basic)</li>
+        <li>Git &amp; GitHub</li>
+      </ul>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p><strong>Interpreter App (WIP):</strong> Voice-to-English translation website using JS and Web Speech API.</p>
-    <!-- Add links if hosted -->
-  </section>
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <p><strong>Interpreter App (WIP):</strong> Voice-to-English translation website using JS and Web Speech API.</p>
+      <!-- Add more projects as needed -->
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@email.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-  </section>
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:andrewxiu@email.com">andrewxiu@email.com</a></p>
+      <p>GitHub: <a href="https://github.com/andrewxiu" target="_blank" rel="noopener">andrewxiu</a></p>
+    </section>
+  </main>
 
-  <footer>
-    <p>© 2025 Andrew</p>
+  <footer class="container">
+    <p>© <span id="year"></span> Andrew</p>
   </footer>
+
+  <!-- Small JS: mobile menu toggle + year -->
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('#site-nav');
+
+    function closeMenu() {
+      btn.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+    }
+
+    if (btn && nav) {
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('open', !open);
+      });
+
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') closeMenu();
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 640) closeMenu();
+      });
+    }
+  </script>
+
 </body>
 </html>
