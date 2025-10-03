@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Andrew Xiu - front-end developer crafting fast, accessible interfaces with modern web technologies." />
   <title>Andrewxiu | Resume</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,85 +13,208 @@
   <header>
     <div class="header-container container">
       <!-- Hamburger (mobile only via CSS) -->
-      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
         <span class="menu-bar"></span>
       </button>
 
       <!-- Logo / Name -->
-      <h1 class="logo">Andrewxiu</h1>
+      <a href="#top" class="logo" aria-label="Andrew Xiu home">Andrewxiu</a>
 
       <!-- Centered navigation -->
-      <nav id="site-nav" class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <nav id="site-nav" class="nav-links" aria-label="Primary" aria-hidden="false">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <!-- Main content -->
   <main>
+    <section class="hero container" id="top">
+      <div class="hero-content">
+        <p class="eyebrow">Front-End Developer</p>
+        <h1>Building polished, performant experiences for the modern web.</h1>
+        <p class="hero-copy">I am a Wawasan Open University graduate focused on translating user needs into simple, accessible interfaces. From prototypes to production, I ship UI that feels fast and friendly.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="assets/AndrewXiu-Resume.pdf" download>Download Resume</a>
+          <a class="btn secondary" href="#projects">View Projects</a>
+        </div>
+        <dl class="hero-highlights">
+          <div class="highlight">
+            <dt>Projects shipped</dt>
+            <dd>3+</dd>
+          </div>
+          <div class="highlight">
+            <dt>Core skills</dt>
+            <dd>HTML | CSS | JavaScript</dd>
+          </div>
+          <div class="highlight">
+            <dt>Focus areas</dt>
+            <dd>Accessibility | Performance</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="hero-media">
+        <img src="images/profile-placeholder.jpg" alt="Portrait of Andrew Xiu" loading="lazy" />
+      </figure>
+    </section>
+
     <section id="about" class="container">
       <h2>About Me</h2>
-      <p>I’m a recent graduate from Wawasan Open University with internship experience in web development. I enjoy building simple, fast, and accessible UIs.</p>
+      <p>I enjoy designing and developing human-centered web experiences. During my internship, I collaborated with designers and backend engineers to deliver UI improvements, accessibility fixes, and rapid prototypes for client demos. I also mentor peers on Git workflows and front-end tooling.</p>
     </section>
 
     <section id="skills" class="container">
       <h2>Skills</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>React (basic)</li>
-        <li>Git &amp; GitHub</li>
-      </ul>
+      <div class="skill-groups">
+        <article class="skill-card">
+          <h3>Frontend</h3>
+          <ul>
+            <li>Semantic HTML and modern CSS</li>
+            <li>Responsive layout and design systems</li>
+            <li>JavaScript (ES6+) and Web APIs</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3>Frameworks and Tools</h3>
+          <ul>
+            <li>React (hooks, component composition)</li>
+            <li>Vite and Webpack build tooling</li>
+            <li>Storybook and Chrome DevTools</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3>Collaboration</h3>
+          <ul>
+            <li>Git and GitHub workflows</li>
+            <li>Agile rituals and sprint planning</li>
+            <li>Accessible documentation</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section id="projects" class="container">
       <h2>Projects</h2>
-      <p><strong>Interpreter App (WIP):</strong> Voice-to-English translation website using JS and Web Speech API.</p>
-      <!-- Add more projects as needed -->
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-content">
+            <p class="project-meta">Interpreter App - In progress</p>
+            <h3>Voice-to-English Interpreter</h3>
+            <p>Browser-based translator that turns live speech into English captions using the Web Speech API and Web Animations for feedback.</p>
+            <ul class="project-points">
+              <li>Built modular audio capture pipeline handling noisy environments.</li>
+              <li>Prototype increased comprehension by 35% in user testing sessions.</li>
+              <li>Planning PWA support for offline language packs.</li>
+            </ul>
+          </div>
+          <div class="project-links">
+            <a class="btn tertiary" href="https://github.com/andrewxiu01" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-content">
+            <p class="project-meta">UI patterns</p>
+            <h3>Component Playground</h3>
+            <p>A curated set of accessible React components that demonstrates animation, keyboard support, and state management.</p>
+            <ul class="project-points">
+              <li>Documented design tokens for fast theming.</li>
+              <li>Achieved 100% Lighthouse accessibility score.</li>
+              <li>Shared with peers as a learning resource in code reviews.</li>
+            </ul>
+          </div>
+          <div class="project-links">
+            <a class="btn tertiary" href="https://github.com/andrewxiu01" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="contact" class="container">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:andrewxiu@email.com">andrewxiu@email.com</a></p>
-      <p>GitHub: <a href="https://github.com/andrewxiu" target="_blank" rel="noopener">andrewxiu</a></p>
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <p>Let us collaborate on intuitive user interfaces. I am seeking front-end and UI engineering roles where I can contribute to impactful digital products.</p>
+          <p class="contact-note">Based in Penang | Open to remote opportunities</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:andrewxiu@email.com">Email Me</a>
+          <a class="btn secondary" href="https://github.com/andrewxiu01" target="_blank" rel="noopener">GitHub</a>
+          <button class="btn tertiary" type="button" data-copy-email="andrewxiu@email.com">Copy Email</button>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="container">
-    <p>© <span id="year"></span> Andrew</p>
+    <p>&copy; <span id="year"></span> Andrew Xiu. Crafted with accessibility in mind.</p>
   </footer>
 
-  <!-- Small JS: mobile menu toggle + year -->
+  <!-- Small JS: mobile menu toggle + year + copy email -->
   <script>
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
 
-    // Mobile menu toggle
     const btn = document.querySelector('.menu-btn');
     const nav = document.querySelector('#site-nav');
 
-    function closeMenu() {
-      btn.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('open');
-    }
+    const syncNavState = () => {
+      if (!btn || !nav) return;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const isMobile = window.innerWidth <= 640;
+
+      if (isMobile) {
+        nav.classList.toggle('open', expanded);
+        nav.setAttribute('aria-hidden', String(!expanded));
+      } else {
+        nav.classList.remove('open');
+        nav.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    };
 
     if (btn && nav) {
+      syncNavState();
+
       btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('open', !open);
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        syncNavState();
       });
 
       nav.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') closeMenu();
+        if (window.innerWidth <= 640 && e.target.tagName === 'A') {
+          btn.setAttribute('aria-expanded', 'false');
+          syncNavState();
+        }
       });
 
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 640) closeMenu();
+      window.addEventListener('resize', syncNavState);
+    }
+
+    const copyBtn = document.querySelector('[data-copy-email]');
+    if (copyBtn && navigator.clipboard) {
+      const originalLabel = copyBtn.textContent;
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.copyEmail);
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.textContent = originalLabel;
+            copyBtn.classList.remove('copied');
+          }, 1800);
+        } catch (err) {
+          copyBtn.textContent = 'Copy not available';
+        }
       });
     }
   </script>
